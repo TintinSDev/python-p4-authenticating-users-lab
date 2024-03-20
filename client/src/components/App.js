@@ -21,7 +21,9 @@ function App() {
   }
 
   function handleLogout() {
-    setUser(null);
+    fetch("/logout", { method: "DELETE" }).then(() => {
+      setUser(null);
+    });
   }
 
   return (
